@@ -67,10 +67,13 @@ public class Kotik {
                 this.dead();
             } else if (this.AP < 0) {
                 this.sleep();
+                System.out.println(this.name + " not dead");
             } else if (this.satiety < 0) {
                 this.chaseMouse();
                 this.eat();
+                System.out.println(this.name + " not dead, not sleep");
             } else {
+                System.out.println(this.name + " not dead, not sleep, not eat");
                 int a = (int)(Math.random() * 10.0D);
                 if (a != 0 && a != 5) {
                     if (a != 1 && a != 6) {
@@ -94,4 +97,39 @@ public class Kotik {
         }
 
     }
+    public void liveAnotherDay(int b)
+    {
+        for(int n = 0; n < 24; ++n)
+        {
+            System.out.println(n);
+            if (this.satiety <= -5) {
+                this.dead();
+            } else if (this.AP < 0) {
+                this.sleep();
+                System.out.println(this.name + " not dead");
+            } else if (this.satiety < 0) {
+                this.chaseMouse();
+                this.eat();
+                System.out.println(this.name + " not dead, not sleep");
+            } else
+            {
+                System.out.println(this.name + " not dead, not sleep, not eat");
+                int a = (int)(Math.random() * 10.0D);
+                switch (a)
+                {
+                    case 0:
+                    case 1: this.chaseMouse();this.eat();break;
+                    case 2:
+                    case 3: this.play(); break;
+                    case 4:
+                    case 5: this.relax(); break;
+                    case 6:
+                    case 7:
+                    case 8: this.walk(); break;
+                    case 9: this.sleep(); break;
+                }
+            }
+        }
+    }
+
 }
