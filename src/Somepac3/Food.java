@@ -1,5 +1,7 @@
 package Somepac3;
 
+import Somepac2.Animal;
+
 public abstract class Food
 {
     protected String name, type;

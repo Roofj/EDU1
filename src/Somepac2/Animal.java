@@ -6,11 +6,27 @@ import Somepac3.Grace;
 abstract public class Animal
 {
     protected String name, color, gender, species;
-    protected int weight, AP, satiety, id;
+    protected int weight, AP, satiety, id, number;
     public String getName(){return this.name;}
     public int getId(){return this.id;}
     public int getAP(){return this.AP;}
     public int getSatiety(){return this.satiety;}
+
+    @Override
+    public boolean equals (Object a)
+    {
+        if (this == a) return true;
+        if (this.getClass()!=a.getClass()) return false;
+        Animal b = (Animal) a;
+        return b.species == this.species;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return this.name.hashCode()+ this.species.hashCode();
+    }
+
     public void eat (Food a)
     {
         if (this.id != a.getFoodid())

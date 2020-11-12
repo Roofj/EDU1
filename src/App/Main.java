@@ -14,7 +14,8 @@ public class Main
         Cat.Garfield.eat(Beef.hip);
         System.out.println(Cat.Garfield.getAP());
         System.out.println(Cat.Garfield.getSatiety());
-        //System.out.println(ForCarnivorus.beef.getFoodid());
+        System.out.println(Cat.Barik.getName());
+        /*System.out.println(ForCarnivorus.beef.getFoodid());
         AnimalContain.forc.addAnimal(Cat.Garfield);
         AnimalContain.forc.addAnimal(Cat.Barik);
         AnimalContain.forc.addAnimal(Cat.Leo);
@@ -27,6 +28,17 @@ public class Main
         AnimalContain.forh1.addAnimal(Duck.Donald);
         AnimalContain.forh1.addAnimal(Duck.Launchpad);
         AnimalContain.forh1.addAnimal(Duck.Scrooge);
-        AnimalContain.forc.getAnimal(0).eat(Grace.grace);
+        //AnimalContain.putHM();
+        //AnimalContain.putAnimal(Duck.Donald, AnimalContain.getHM("animalHashMap"));
+        AnimalContain.getAnimal(Duck.Donald.getName(),AnimalContain.getHM("animalHashMap") ).eat(Grace.grace);
+        */
+        AnimalContain.forCarnivorous.putAnimal(Wolf.Akela);
+        AnimalContain.forCarnivorous.deleteAnimal("Akela");
+        AnimalContain.forCarnivorous.putAnimal(Wolf.Akela);
+        AnimalContain.forCarnivorous.putAnimal(Cat.Leo);
+        AnimalContain.forCarnivorous.putAnimal(Cat.Barik);
+        AnimalContain.forCarnivorous.putAnimal(Cat.Garfield);
+        AnimalContain.forCarnivorous.getAnimal("Akela").eat(Grace.grace);
+        Duck.Donald.swim();
     }
 }

@@ -1,5 +1,5 @@
 package Somepac3;
-abstract class ForCarnivorus extends Food
+abstract public class ForCarnivorus extends Food
 {
     ForCarnivorus()
     {

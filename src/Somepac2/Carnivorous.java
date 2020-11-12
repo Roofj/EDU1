@@ -1,6 +1,9 @@
 package Somepac2;
 
-class Carnivorous extends Animal {
+import Somepac3.Food;
+import Somepac3.ForCarnivorus;
+
+public abstract class Carnivorous extends Animal {
     /*    protected void eat (Food a)
         {
             //Animal.searchFood(a);
@@ -19,6 +22,7 @@ class Carnivorous extends Animal {
         }
     */    Carnivorous()
     {
+        this.species = "Carnivorous";
         this.id = 1;
     }
 /*    static Carnivorus Garfield = new Carnivorus("Garfield", "Cat", 5, 4);

@@ -1,6 +1,8 @@
 package Somepac2;
 
-public class Cat extends Carnivorous {
+public class Cat extends Carnivorous
+{
+    static private int count;
     Cat(String name, int satiety, int AP) {
         this.name = name;
         this.satiety = satiety;

@@ -1,6 +1,6 @@
 package Somepac3;
 
-abstract class ForHerbivore extends Food
+abstract public class ForHerbivore extends Food
 {
     public ForHerbivore()
     {

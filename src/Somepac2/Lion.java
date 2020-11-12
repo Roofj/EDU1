@@ -1,11 +1,20 @@
 package Somepac2;
 
-public class Lion extends Carnivorous {
+import Somepac3.ForCarnivorus;
+
+public class Lion extends Carnivorous implements Growl {
     Lion(String name, int satiety, int AP) {
         this.name = name;
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Lion";
+    }
+
+    @Override
+    public void growl()
+    {
+        this.AP-= 1;
+        System.out.println(this.name+ " growl");
     }
 
     static public Lion Simba = new Lion("Simba", 5, 4);

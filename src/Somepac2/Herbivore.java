@@ -22,6 +22,7 @@ public abstract class Herbivore extends Animal
     }
 */   protected Herbivore ()
     {
+        this.species = "Herbivore";
         this.id = 0;
     }
 /*    static Herbivore Donald = new Herbivore("Donald", "Duck", 5, 4);
