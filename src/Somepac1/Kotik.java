@@ -5,53 +5,62 @@ public class Kotik {
     int AP;
     String name;
 
-    public void eat(int hungry) {
+    public boolean eat(int hungry) {
         this.satiety += hungry;
         --this.AP;
+        return true;
     }
 
-    public void eat(int hungry, String food) {
+    public boolean eat(int hungry, String food) {
         this.satiety = hungry;
         --this.AP;
         System.out.println(this.name + " eat " + food);
+        return true;
     }
 
-    public void eat() {
+    public boolean eat() {
         this.eat(3, "Mouse");
+        return true;
     }
 
-    public void play() {
+    public boolean play() {
         this.satiety -= 2;
         --this.AP;
         System.out.println(this.name + " play");
+        return true;
     }
 
-    public void sleep() {
+    public boolean sleep() {
         --this.satiety;
         this.AP += 5;
         System.out.println(this.name + " sleep");
+        return true;
     }
 
-    public void walk() {
+    public boolean walk() {
         this.satiety -= 2;
         --this.AP;
         System.out.println(this.name + " walk");
+        return true;
     }
 
-    public void chaseMouse() {
+    public boolean chaseMouse() {
         this.satiety -= 3;
         --this.AP;
         System.out.println(this.name + " chase Mouse.");
+        return true;
     }
 
-    public void dead() {
+    public boolean dead() {
         System.out.println(this.name + " is dead");
+        return true;
     }
 
-    public void relax() {
+    public boolean relax() {
         --this.satiety;
         ++this.AP;
         System.out.println(this.name + " relax");
+        return true;
     }
 
     public Kotik(String name, int satiety, int AP) {
@@ -79,19 +88,19 @@ public class Kotik {
                     if (a != 1 && a != 6) {
                         if (a != 2 && a != 7 && a != 9) {
                             if (a != 3 && a != 8) {
-                                this.sleep();
+                                System.out.println(this.sleep());
                             } else {
-                                this.walk();
+                                System.out.println(this.walk());
                             }
                         } else {
-                            this.relax();
+                            System.out.println(this.relax());
                         }
                     } else {
-                        this.play();
+                        System.out.println(this.play());
                     }
                 } else {
-                    this.chaseMouse();
-                    this.eat();
+                    System.out.println(this.chaseMouse());
+                    System.out.println(this.eat());
                 }
             }
         }
@@ -118,15 +127,15 @@ public class Kotik {
                 switch (a)
                 {
                     case 0:
-                    case 1: this.chaseMouse();this.eat();break;
+                    case 1: System.out.println(this.chaseMouse());System.out.println(this.eat()); break;
                     case 2:
-                    case 3: this.play(); break;
+                    case 3: System.out.println(this.play()); break;
                     case 4:
-                    case 5: this.relax(); break;
+                    case 5: System.out.println(this.relax()); break;
                     case 6:
                     case 7:
-                    case 8: this.walk(); break;
-                    case 9: this.sleep(); break;
+                    case 8: System.out.println(this.walk()); break;
+                    case 9: System.out.println(this.sleep()); break;
                 }
             }
         }
