@@ -6,6 +6,7 @@ public class Duck extends Herbivore implements Swim, Fly {
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Duck";
+        this.volume = 1;
     }
     @Override
     public void swim ()

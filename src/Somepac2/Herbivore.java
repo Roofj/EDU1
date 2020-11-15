@@ -1,6 +1,8 @@
 package Somepac2;
 
-public abstract class Herbivore extends Animal
+import Somepac3.ForHerbivore;
+
+public abstract class Herbivore extends Animal<ForHerbivore>
 {
 /*    public void eat (Food a)
     {
@@ -24,6 +26,7 @@ public abstract class Herbivore extends Animal
     {
         this.species = "Herbivore";
         this.id = 0;
+
     }
 /*    static Herbivore Donald = new Herbivore("Donald", "Duck", 5, 4);
     static Herbivore Jerry = new Herbivore("Jerry", "Mouse", 5, 4);

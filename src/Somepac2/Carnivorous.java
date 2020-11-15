@@ -1,9 +1,11 @@
 package Somepac2;
 
+import Somepac3.Beef;
 import Somepac3.Food;
 import Somepac3.ForCarnivorus;
+import Somepac3.Grace;
 
-public abstract class Carnivorous extends Animal {
+public abstract class Carnivorous extends Animal <ForCarnivorus> {
     /*    protected void eat (Food a)
         {
             //Animal.searchFood(a);

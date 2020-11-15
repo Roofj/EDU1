@@ -1,16 +1,22 @@
 package Somepac2;
 
+import Somepac3.Beef;
 import Somepac3.Food;
+import Somepac3.ForCarnivorus;
 import Somepac3.Grace;
 
-abstract public class Animal
+import java.util.ArrayList;
+import java.util.Collection;
+
+abstract public class Animal<T extends Food>
 {
     protected String name, color, gender, species;
-    protected int weight, AP, satiety, id, number;
+    protected int weight, AP, satiety, id, number, volume;
     public String getName(){return this.name;}
     public int getId(){return this.id;}
     public int getAP(){return this.AP;}
     public int getSatiety(){return this.satiety;}
+    protected ArrayList<? extends T> c;
 
     @Override
     public boolean equals (Object a)
@@ -29,19 +35,31 @@ abstract public class Animal
 
     public void eat (Food a)
     {
-        if (this.id != a.getFoodid())
+        try
         {
-            System.out.println("Now "+ this.name+ " is offered "+ a.getFoodname());
-            System.out.println(this.name + " don't eat "+ a.getFoodname());
+            if (this.id == a.getFoodid())
+            {
+                this.satiety+= a.getFoodh();
+                this.AP--;
+                System.out.println("Now "+ this.name+ " is offered "+ a.getFoodname());
+                System.out.println(this.name + " eat "+ a.getFoodname());
+            }
+            else
+            {
+                throw new WorngFoodException();
+            }
         }
-        else
+        catch (WorngFoodException e)
         {
-            this.satiety+= a.getFoodh();
-            this.AP--;
-            System.out.println("Now "+ this.name+ " is offered "+ a.getFoodname());
-            System.out.println(this.name + " eat "+ a.getFoodname());
+            System.out.println(e);
         }
     }
+
+    public int getVolume()
+    {
+        return this.volume;
+    }
+
     /*static public int hungry, z;
     static protected void searchFood(ForCarnivorus a)
     {

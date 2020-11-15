@@ -7,6 +7,7 @@ public class Parrot extends Herbivore implements Fly
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Parrot";
+        this.volume = 1;
     }
 
     @Override

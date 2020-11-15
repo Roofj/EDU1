@@ -6,6 +6,7 @@ public class Mouse extends Herbivore implements Swim {
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Mouse";
+        this.volume = 1;
     }
 
     @Override

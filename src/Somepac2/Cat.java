@@ -8,6 +8,7 @@ public class Cat extends Carnivorous
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Cat";
+        this.volume = 1;
     }
 
     static public Cat Garfield = new Cat("Garfield", 5, 4);

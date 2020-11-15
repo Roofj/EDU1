@@ -8,13 +8,14 @@ import java.util.List;
 
 public class AnimalContain<T extends Animal>
 {
+    enum Quantity {One, Two, Three, Four, Five}
     ArrayList<Animal> animal = new ArrayList<>();
     private HashMap<String, T > animalHashMap = new HashMap<>();
     //private HashMap<String, HashMap> contanHashMap = new HashMap<>();
 
-    private AnimalContain (int mcount)
+    private AnimalContain (Quantity mcount)
     {
-        this.mcount = mcount;
+        this.mcount = mcount.ordinal()+1;
     }
 
     public T getAnimal(String name)
@@ -37,8 +38,9 @@ public class AnimalContain<T extends Animal>
     }
 
     public void putAnimal(T a) {
-        if (this.searchAnimal(a.getName())== null && this.animalHashMap.size()< this.mcount) {
+        if (this.searchAnimal(a.getName())== null && this.count+ a.getVolume()<= this.mcount) {
             this.animalHashMap.put(a.getName(), a);
+            this.count+= a.getVolume();
             System.out.println(a.getName() + " added");
             System.out.println(this.animalHashMap.size());
         } else {
@@ -50,6 +52,7 @@ public class AnimalContain<T extends Animal>
     {
         if (this.searchAnimal(name)!= null)
         {
+            this.count-= this.animalHashMap.get(name).getVolume();
             this.animalHashMap.remove(name, getAnimal(name));
             System.out.println(name+ " deleted of this");
         }
@@ -76,9 +79,9 @@ public class AnimalContain<T extends Animal>
     final private int mcount;
     private String name;
 
-    public static AnimalContain <Carnivorous> forCarnivorous = new AnimalContain<>(3);
-    public static AnimalContain <Herbivore> forHerbivore = new AnimalContain<>(3);
-    public static AnimalContain <Duck> forDuck = new AnimalContain<>(3);
+    public static AnimalContain <Carnivorous> forCarnivorous = new AnimalContain<>(Quantity.Four);
+    public static AnimalContain <Herbivore> forHerbivore = new AnimalContain<>(Quantity.Four);
+    public static AnimalContain <Duck> forDuck = new AnimalContain<>(Quantity.Four);
 
     //public Animal getAnimal(int n){return this.animal.get(n);}
     /*public AnimalContain(String name, int quantity, int id)

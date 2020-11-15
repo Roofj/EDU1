@@ -9,4 +9,8 @@ public abstract class Food
     public int getFoodh(){return this.hunrgy;}
     public int getFoodid(){return this.id;}
     public String getFoodname(){return this.name;}
+    public<T> Food getFood(Food a)
+    {
+        return a;
+    }
 }

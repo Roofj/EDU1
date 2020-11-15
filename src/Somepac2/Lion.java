@@ -8,6 +8,7 @@ public class Lion extends Carnivorous implements Growl {
         this.satiety = satiety;
         this.AP = AP;
         this.species = "Lion";
+        this.volume = 3;
     }
 
     @Override
